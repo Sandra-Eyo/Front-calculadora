@@ -1,57 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora con API</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            width: 300px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        input, select, button {
-            margin: 10px 0;
-            width: 100%;
-            padding: 8px;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
-        }
-    </style>
+    <title>Calculadora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-
-<div class="container">
-    <h2>Calculadora</h2>
-    <form id="calculatorForm">
-        <input type="number" id="num1" placeholder="Número 1" required>
-        <input type="number" id="num2" placeholder="Número 2" required>
-        <select id="operation">
-            <option value="sumar">Sumar</option>
-            <option value="restar">Restar</option>
-            <option value="multiplicar">Multiplicar</option>
-            <option value="dividir">Dividir</option>
-        </select>
-        <button type="submit">Calcular</button>
-    </form>
-    <b><div id="result"></div></b>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="bg-white p-6 rounded-lg shadow-md w-80">
+    <h1 class="text-2xl font-bold text-center text-gray-700 mb-4">Calculadora</h1>
+    <div class="flex mb-4 space-x-2">
+        <input type="number" id="a" placeholder="Número A" class="w-1/2 p-2 border rounded focus:outline-none focus:ring focus:ring-blue-200">
+        <input type="number" id="b" placeholder="Número B" class="w-1/2 p-2 border rounded focus:outline-none focus:ring focus:ring-blue-200">
+    </div>
+    <div class="grid grid-cols-2 gap-2 mb-4">
+        <button onclick="calcular('sumar')" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Sumar</button>
+        <button onclick="calcular('restar')" class="bg-green-500 text-white p-2 rounded hover:bg-green-600">Restar</button>
+        <button onclick="calcular('multiplicar')" class="bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600">Multiplicar</button>
+        <button onclick="calcular('dividir')" class="bg-red-500 text-white p-2 rounded hover:bg-red-600">Dividir</button>
+    </div>
+    <div class="text-center text-xl font-semibold text-gray-800 mt-4">
+        Resultado: <span id="resultado" class="font-bold text-gray-900">0</span>
+    </div>
+    <div class="flex justify-center mt-4">
+        <button onclick="limpiar()" class="bg-gray-300 text-gray-700 p-2 rounded hover:bg-gray-400">Limpiar</button>
+    </div>
 </div>
-
-<script src="script.js"></script>
-
 </body>
+<script src="./script.js"></script>
 </html>
