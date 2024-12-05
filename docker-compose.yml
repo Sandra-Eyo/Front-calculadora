@@ -1,0 +1,16 @@
+version: '3'
+
+name: calculadora
+services:
+  backend:
+    image: sandraeyo/back-calculadora-image:v1
+    container_name: back-calculadora-container
+    ports:
+      - "8000:8000" 
+
+  frontend:
+    
+    image: sandraeyo/front-calculadora-image:v1
+    container_name: front-calculadora-container
+    ports:
+      - "80:80" 
